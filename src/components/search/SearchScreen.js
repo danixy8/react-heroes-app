@@ -4,7 +4,7 @@ import { useForm } from '../../hooks/useForm';
 import { getHeroesByName } from '../../selectors/getHeroesByName';
 import { HeroCard } from '../hero/HeroCard';
 import queryString from 'query-string';
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 
 export const SearchScreen = () => {
 
@@ -19,7 +19,7 @@ export const SearchScreen = () => {
 
   const { searchText } = formValues;
 
-  const heroesFilter = useMemo(() => getHeroesByName(q), [q])
+  const heroesFilter = useMemo(() => getHeroesByName(q), [q]);
 
   const handleSearch = (e) => {
     e.preventDefault()
