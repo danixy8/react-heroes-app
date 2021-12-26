@@ -12,10 +12,11 @@ export const Navbar = () => {
   const action = {type: types.logout};
 
   const handleLogout = () => {
+    console.log('handleLogout')
     dispatch(action);
 
     navigate('/login', {
-        replace: true
+      replace: true
     });
   };
 
