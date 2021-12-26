@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { heroeImages } from '../../helpers/heroImages';
+
 
 export const HeroCard = ({ 
   id,
@@ -8,8 +10,7 @@ export const HeroCard = ({
   first_appearance,
   characters
 }) => {
-
-  const imagePath = `/assets/heroes/${id}.jpg`;
+  // const imagePath = `/assets/heroes/${id}.jpg`;
 
   return (
     <div className="col animate__animated animate__fadeIn">
@@ -19,7 +20,7 @@ export const HeroCard = ({
           <div className="col-4">
             <Link to={`/hero/${id}`}>
               <img 
-                src={imagePath} 
+                src={ heroeImages(`./${id}.jpg`).default } 
                 className="card-img" 
                 alt={superhero} 
                 style={{cursor: "pointer"}}
